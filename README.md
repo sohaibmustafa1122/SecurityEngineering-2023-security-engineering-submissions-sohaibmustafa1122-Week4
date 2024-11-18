@@ -43,54 +43,98 @@ Task 3:
 
 Tools Installed
 BurpSuite Community Edition: Downloaded and installed from PortSwigger's official site.
+
 For installation, I created a temporary project with default settings and accessed the dashboard.
+
 Docker Desktop: Already installed and configured to run Docker containers.
+
 Verified functionality by running the hello-world test image.
+
 DVWA (Damn Vulnerable Web Application):
+
 Pulled the DVWA image using:
 code:
 docker pull vulnerables/web-dvwa
+
+
 Ran the container using:
 code:
 docker run --rm -it -p 80:80 vulnerables/web-dvwa
+
 Confirmed that DVWA was accessible via http://localhost.
+
+
 2. Setting Up DVWA
+
 Accessed DVWA in the browser using http://127.0.0.1.
+
 Logged in with the provided credentials:
+
 Username: admin
+
 Password: password
+
 Initialized the DVWA database by clicking "Create / Reset Database" on the setup page.
+
 Logged in again and confirmed the DVWA application was running.
+
 3. BurpSuite Configuration
+
 Opened the BurpSuite browser via Target > Open Browser and navigated to http://localhost.
+
 Ensured BurpSuite Proxy was active and correctly intercepting traffic.
+
 4. Subtask 1: Intercepting Traffic
+
 Opened the Proxy tab in BurpSuite and turned interception ON.
+
 Performed the following actions:
+
 Attempted to log in with incorrect credentials to generate traffic.
+
 Observed the intercepted requests in the HTTP history.
+
 Logged in with correct credentials while interception was still active:
+
 Username: admin
+
 Password: password.
+
 Intercepted the POST request and modified the User-Agent header to include:
+
 Value: My name + a household item (e.g., User-Agent: Kettle).
+
 5. Reviewing and Saving the Modified Request
+
+
+
 Forwarded the modified POST request and completed the login process.
+
 Turned interception OFF.
+
 Reviewed the HTTP history to locate the modified request:
+
 Switched to the Edited Request view to confirm the changes.
+
 Captured screenshots showing:
+
 Edited POST request in raw format.
+
 HTTP history, including timestamps, methods, and ports.
+
 6. Submission
-Created a GitHub repository containing:
-Screenshots of DVWA setup, BurpSuite configuration, intercepted traffic, and modified POST requests.
-A detailed explanation of each step.
+
 Screenshots in the Repository
+
 DVWA setup and database initialization.
+
 Logged-in DVWA interface.
+
 BurpSuite intercept settings.
+
 Intercepted POST request before and after modification.
+
 HTTP history showing timestamps and edited requests.
+
 
 
