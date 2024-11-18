@@ -3,7 +3,7 @@ Week4
 
 
 
-#Task 1:
+# Task 1:
 
 Meltdown is a timing-based side-channel attack that exploits out-of-order execution in modern CPUs. It bypasses the CPU's privilege separation to access kernel memory, which is normally protected. By utilizing speculative execution, the attack reads kernel memory and measures timing differences to infer sensitive data (Kocher et al., 2018). This vulnerability primarily affects Intel CPUs manufactured before 2018, as well as some ARM and AMD processors. Systems based on x86 architecture, such as desktops, laptops, servers, and virtual machines, are particularly vulnerable (Intel Security Center, 2018).
 
@@ -19,7 +19,7 @@ Meltdownattack.com. (2018). "Meltdown Overview and Impact."
 
 
 
-#Task 2:
+# Task 2:
 The Slowloris Denial-of-Service (DoS) attack works by exploiting the way web servers handle HTTP headers. It sends partial HTTP requests and keeps these connections open for as long as possible by periodically sending more headers without completing the request. This prevents the server from closing the connections, consuming server resources, and blocking legitimate traffic (OWASP Slowloris Project, 2021).
 
 What makes Slowloris unique compared to high-bandwidth Distributed Denial-of-Service (DDoS) attacks is its low resource requirement. Instead of overwhelming the server with a massive flood of traffic, it uses a small number of requests to monopolize the server's connection pool. This makes the attack stealthier and more targeted, as it requires minimal bandwidth from the attacker while still achieving significant disruption (Ristic, 2013).
@@ -39,7 +39,7 @@ Cloudflare (2021). "Understanding Slowloris DDoS Attack."
 
 
 
-#Task 3:
+# Task 3:
 
 Tools Installed
 BurpSuite Community Edition: Downloaded and installed from PortSwigger's official site.
@@ -138,7 +138,7 @@ HTTP history showing timestamps and edited requests.
 
 
 
-#Subtask 2: Repeater (0.25p)
+# Subtask 2: Repeater (0.25p)
 Based on the repeated requests and responses analyzed in BurpSuite's Repeater:
 
 Observation:
@@ -184,4 +184,5 @@ The screenshot provided shows the text entered in the Decoder, showcasing the in
 
 To perform the brute force attack on the DVWA login page, we utilized Hydra, a powerful tool for password cracking. First, we prepared the Hydra command specifying the admin username and a password list file (passwords.txt) located in the /root directory of the Kali Linux Docker container. The target was set to the DVWA login form running on 127.0.0.1, and the form's parameters (username, password, and Login) were configured based on the HTTP POST request observed in Burp Suite. The success condition was identified as a redirect to index.php. After executing the command, Hydra attempted to brute force the login credentials but encountered connection issues due to the disabled child mode. This concludes the testing phase with Hydra.
 
-#Subtask 5: thc-hydra (1p)
+# Subtask 5: thc-hydra (1p)
+I attempted to execute the thc-hydra command to brute-force the login credentials for the DVWA application using Docker. Despite correctly pulling and running the Hydra image and attempting to configure the command with the appropriate parameters (HTTP method, session ID, failure string, etc.), the process was unsuccessful.
